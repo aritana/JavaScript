@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #demo{
+            font-family: Verdana;
+            font-size:12px;
+            text-align: center;
+            color:blue;
+        }
+        *{
+            font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Revisão 02.08.2020</h2>
+    <h3>My Second javaScript</h3>
+    <button type = "button"
+    onclick="document.getElementById('demo').innerHTML = Date()">Click me to display Date and Time</button>    
+    <p id="demo">Parágrafo #id=demo</p>
+
+    </p>
+    <p>
+        <h2>Java Script Can Change HTML Content</h2>
+        One of many javaScript HTML methods is getElementById().
+        <br><br>
+        This example uses the method to "find" an HTML element (with id = "demo")
+        and changes the element content (innerHtml) to "Hello Java Script"
+        <br><br>
+        <button type="button" onclick="document.getElementById('demo2').innerHTML = 'Hello Brazil'">Click Me</button>
+    </p>
+    <p id = "demo2">Parágrafo #id=demo2</p>
+    <p><h2>Java Script Can Change HTML Attribute</h2>
+        In this example JavaScript changes the value of the src (source) attribute of 
+        an &lt;img&gt;tag:
+        <h3>The light Bulb</h3>
+        <img id = "imgBulb" src = "img/pic_bulboff.gif" alt="Lâmpada off">
+        <button type ="button" onclick="document.getElementById('imgBulb').src='img/pic_bulbon.gif'">Turn de light on</button>
+        <button type ="button" onclick="document.getElementById('imgBulb').src = 'img/pic_bulboff.gif'">Turn on the light off</button>
+    </p>
+    <p>
+        <h2>Java Script Can Change HTML Styles (CSS)</h2>
+        Changing the style of an HTML element, is a variant of Changing
+        an HTML atribute:
+        <h3>Example</h3>
+        <button type ="button" onclick="document.getElementById('demo3').style.fontSize = '35px'">Click Me</button>
+    </p>
+    <p id = "demo3">Parágrafo id = demo3</p>
+    <p>
+        <h2>JavaScript Can Hide Elements</h2>
+        Hiding HTML elements can be done by changing the display style:
+        <br>
+        <button type="button" onclick="document.getElementById('demo3').style.display = 'none'">Esconder parágrafo demo = 3</button>
+        <h2>JavaScript Can Show HTML Elements</h2>
+        <button type="button" onclick="document.getElementById('demo3').style.display ='block'">Mostrar parágrafo demo = 3</button>
+    </p>
+    <p>
+        <h2>JavaScript Where to</h2>
+        <h3>The &lt;script&gt; and &lt;/script&gt; Tag</h3>
+        <h4>Example</h4>
+        <pre>
+            <code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;body&gt;
+                        &lt;h2&gt;JavaScript in Body&lt;/h2&gt;
+                        &lt;p id="demo"&gt;&lt;/p&gt;
+                        &lt;script&gt;
+                            document.getElementById("demo").innerHTML = "My Wish is to achieve all plans.";
+                        &lt;/script&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt; 
+            </code>
+        </pre>
+    </p>
+    <p id = "demo4">Páragrafo id = demo4</p>
+    <script>
+        document.getElementById('demo4').innerHTML = "My Wish is to achieve all plans.";
+    </script>
+    Old JavaScript examples may use a type attribute: &lt;script type = "text/javascript"&gt;
+    The type attribute is not required. JavaScript is the default scripting language in HTML.
+    <p>
+        <h2>JavaScript Functions and Events</h2>
+    </p>
+    
+</body>
+
+</html>
