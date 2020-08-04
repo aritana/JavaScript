@@ -14,7 +14,29 @@
         *{
             font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
         }
+        #webPage{
+            color:green;
+        }
+        code,strong {
+            font-family: Consolas,"courier new";
+            color: crimson;
+            background-color: #f1f1f1;
+            padding: 2px;
+            font-size: 105%;
+            
+        }
+        pre{
+            color:blue;
+        }
+    
+
     </style>
+    <script>
+        function myFunction(){
+            document.getElementById("demo5").innerHTML = "Paragraph changed.";
+        }
+    </script>
+    <script src="js/myScript.js"></script>
 </head>
 <body>
     <h2>Revisão 02.08.2020</h2>
@@ -86,7 +108,161 @@
     <p>
         <h2>JavaScript Functions and Events</h2>
     </p>
-    
+    <p>
+        <h2>JavaScript Functions and Events</h2>
+        A JavaScript function is a block of JavaScript code, that can be executed
+        when "called" for.
+        <br><br>
+        For example, a function can be called when an <strong>event</strong>occurs, 
+        like when the user clicks a button.
+    </p>
+    <p>
+        <h2>JavaScript in &lt;head&gt; or &lt;body&gt;</h2>
+        You can place any number of scripts in an HTML document.
+        <br><br>
+        Scripts can be placed in the &lt;body&gt;, or in the &lt;head&gt; section of an HTML page, or in both.
+    </p>
+    <p>
+        <h2>JavaScript in &lt;head&gt;</h2>
+        In this example, a JavaScript <strong>function</strong> is placed in the &lt;head&gt; <section>of an 
+        section of an HTML page.
+        <br><br>
+        The function is invoked (called) when a button is cliked:
+
+        <h3>Example</h3>
+        <pre>
+            <code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                    &lt;head&gt;
+                    &lt;script&gt;
+                         function myFunction() {
+                            document.getElementById("demo").innerHTML = "Paragraph changed.";
+                        }
+                    &lt;/script&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;                    
+                        &lt;h1&gt;A Web Page&lt;/h1&gt;
+                        &lt;p id="demo"&gt;A Paragraph&lt;/p&gt;
+                        &lt;button type="button" onclick="myFunction()"&gt;Try it&lt;/button&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;           
+            </code>
+        </pre>
+        <h1 id = "webPage">A Web Page</h1>
+        <p id =  "demo5"> A paragraph</p>
+        <button type="button" onclick="myFunction()">Try it</button>
+    </p>
+    <p>
+        <h2>JavaScript in &lt;body&gt;</h2>
+        You can place any number of scripts in an HTML document.
+        <br><br>
+        In this example, a javaScript function is placed in the &lt;body&gt; section of an
+        HTML page.
+        <br><br>
+        The function is invoked (called) when a button is clicked:
+        <h3>Example</h3>
+        <pre>
+            <code>
+                &lt;!DOCTYPE html&gt;
+                    &lt;html&gt;
+                        &lt;body&gt;
+                        &lt;h1&gt;A Web Page&lt;/h1&gt;
+                        &lt;p id="demo"&gt;A Paragraph&lt;/p&gt;
+                        &lt;button type="button" onclick="myFunction()"&gt;Try it&lt;/button&gt;
+                        &lt;script&gt;
+                            function myFunction() {
+                            document.getElementById("demo").innerHTML = "Paragraph changed.";
+                            }
+                        &lt;/script&gt;
+                        &lt;/body&gt;
+                    &lt;/html&gt;
+            </code>
+        </pre>
+        <h2>JavaScript in Body</h2>
+        <p id = "demo6">A paragraph.</p>
+        <button type = "button" onclick="myFunction2()">Try it</button>
+        <script>
+            function myFunction2(){
+                document.getElementById('demo6').innerHTML = "Paragraph changed."
+            }
+        </script>
+        
+    </p>
+    <p>
+        <h2>External JavaScript</h2>
+        Scripts can also be placed in external files:
+        <p>
+            <h3>Example</h3>
+            <pre>
+                External file: myScript.js
+                <code>
+                    
+                    function myFunction() {
+                      document.getElementById("demo").innerHTML = "Paragraph changed.";
+                    }
+                </code>
+            </pre>
+        </p>
+        External scripts are practical when the same code is used in many different web pages.
+        <p>
+            JavaScript files have the file extesion <strong>.js</strong>
+        </p>
+        <p>
+            To use an external script, put the name of the script in the 
+            <strong>src</strong> (source) attribute of <strong>tag</strong>
+            <h3>Example</h3>
+            <pre>
+                <code>
+                    &lt;script src="myScript.js"&gt;&lt;/script&gt;
+                </code>
+            </pre>
+        </p>
+        <p id = "demo7">
+            (my Function is stored in a external file called "myScript.js")
+        </p>
+        <p>
+            <button type="button" onclick="myExternalFunction()">Try it</button>
+            <br><br> You can place an external script reference in &lt;head&gt; or &lt;body&gt; as you like.
+            The script will behave as if it was located exactly where the &lt;script&gt; tag is located.
+            <br>
+            External scripts cannot contain &lt;script&gt; tags.
+        </p>
+        <p>
+            <h2>External JavaScript Advantages</h2>
+            Placing scrpts in external files has some advantages:
+            <ul>
+                <li>It separates HTML and code</li>
+                <li>It makes HTML and JavaScript easier to read and maintain</li>
+                <li>Cached JavaScript files can speed up page loads</li>
+                <br>
+                To add several script files to one page - use several script tags:
+                <h3>Example</h3>
+                <pre>
+                    <code>
+                        &lt;script src="myScript1.js"&gt;&lt;/script&gt;
+                        &lt;script src="myScript2.js"&gt;&lt;/script&gt;
+                    </code>
+                </pre>
+            </ul>
+        </p>
+        <p>
+            <h2>External References</h2>
+            External scripts can be referenced with a full URL or with a path relative to the 
+            current web page.
+
+            <br>
+            This example uses a full URL to link to a script:
+            <h3>Example</h3>
+            <pre>
+                <code>
+                    &lt;script src="https://www.w3schools.com/js/myScript1.js"&gt;&lt;/script&gt;
+                </code>
+            </pre>
+        </p>
+        <script src="https://www.w3schools.com/js/myScript.js"></script>
+
+    </p>
 </body>
 
 </html>
