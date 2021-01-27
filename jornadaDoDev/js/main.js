@@ -1,6 +1,6 @@
 
 //getElementsById
-document.getElementById("logradouro").innerHTML="Rua dos bobos número zero";
+document.getElementById("logradouro").innerHTML="Rua dos humanos, número zero";
 document.getElementById("timePequeno").innerHTML= "<h2>Atlético Mineiro</h2>";
 
 //getElementsByClass
@@ -72,3 +72,113 @@ console.log(typeof(teste));
 
      //Escopo: global: fora de função, local: dentro da função.
 //14:Objetos
+var carro ={
+ make:"Ford",
+ model: 'Mustang'  ,
+ year:'1969'
+};
+//ou
+var mycar = new Object();
+mycar.make = 'Ford';
+mycar.model = 'Mustang';
+mycar.year='1969';
+console.log(carro, mycar);
+
+//Arrays
+var frutaPortugues = 1;
+var frutaEspanhol=0;
+fruta =[["naranja","lemon"],["laranja","limão"]];
+console.log(fruta[frutaEspanhol][0]);
+
+//forEach, map e while.
+var classeJs =  document.getElementsByClassName('js');
+
+for(let i=0;  i < classeJs.length; i++) {
+  console.log("curso: " + classeJs[i].innerHTML);
+}
+
+array = [1,2,3];
+array.forEach(element => {
+  console.log(element);
+});
+
+array.map(function(element, index) 
+{
+  console.log(index, element );
+});
+
+//Funções
+
+function minhaFuncao(objeto)
+{
+  objeto.make =  "Fiat";
+  objeto.country='Brazil';
+}
+var meuCarro =  {make: "Honda", model: "Accord", year: 1998};
+var x, y;
+x =  meuCarro.make;
+y =  minhaFuncao(meuCarro);
+console.log(meuCarro);
+
+//funçao anônima
+  //não precisa ter um nome.
+  var soma =  function(a,b){
+    return a+b;
+  }
+
+  var total =  soma(3,2);
+  console.log(total);
+
+  function map(total, x){
+      y = 5;
+      return total(x,y);
+  }
+
+  function soma(a,b){
+    return a+b;
+  }
+
+  console.log(map(soma,9));
+
+  //eventos onload
+  window.onload = function(){
+    console.log("Pagina Carregada com sucesso!");
+  }
+
+  //Evento click
+  //console.log(document.getElementById("btn"));
+  var btn = document.getElementById("btn");
+  btn.addEventListener('click',function(){
+    console.log("clique");
+  });
+
+  //Hover, mouseover
+  //Eventos: keyUP
+  var linguagens =  document.getElementById("li");
+  linguagens.addEventListener("change", function(){
+      var options = this.options;
+      var itemAtual = this.selectedIndex;
+      console.log(options[itemAtual].text);
+
+  });
+
+  var search = document.getElementById('search');
+  search.addEventListener("keyup",function(){
+      var result = document.getElementById('result');
+      result.innerHTML = this.value;
+      console.log(this.value);
+  });
+  var form= document.querySelector("form");
+
+  //console.log(form.elements[1]);
+
+  form.addEventListener("submit",function(){
+    console.log(this.elements);
+    for(let i =0; i < this.elements.length; i++){
+       var element = this.elements[i];
+       if(element ==""){
+         this.elements[i].classList.add("error");
+       }
+    }
+  });
+
