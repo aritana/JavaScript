@@ -1,0 +1,10 @@
+Objetivos da aula.
+Resolvi ir pro site e ver o tutorial antes da aula:
+https://pt-br.reactjs.org/tutorial/tutorial.html
+
+
+
+npx create-react-app my-appc
+cd my-app
+npm start
+
