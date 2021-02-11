@@ -9,7 +9,7 @@ class App extends Component {//componente ajuda a ter o estado
   state = { //Aplicacao inteira so tem um estado
     comentarios: [
       {
-        
+
         name: 'Jonh',
         email: 'joao@gmail.com',
         date: new Date(2020, 3, 19),
@@ -23,6 +23,22 @@ class App extends Component {//componente ajuda a ter o estado
       }
     ]
   }
+  
+  adicionarComentario = () => {
+     const newMensage = {
+      name: 'Kleber',
+      email: 'kleber@gmail.com',
+      date: new Date(),
+      mensage: 'Sou o Kleber. Bom dia.'
+     }
+    //  let list = this.state.comentarios;
+    //  list.push(newMensage);
+    //  this.setState({comentarios: list});
+    this.setState({
+      comentarios:[...this.state.comentarios, newMensage]
+    })
+  }
+
   render() {
 
     return (
@@ -30,9 +46,9 @@ class App extends Component {//componente ajuda a ter o estado
 
         <h1>Meu projeto</h1>
         {this.state.comentarios.map((comentario, indice) => (
-              
+
           <Comentario
-            key = {indice}
+            key={indice}
             name={comentario.name}
             email={comentario.email}
             date={comentario.date} >
@@ -40,10 +56,10 @@ class App extends Component {//componente ajuda a ter o estado
 
           </Comentario>
 
-        ))
-        }
+        ))}
+        <button onClick={this.adicionarComentario}>Adicionar um comentário</button>
       </div>
-    )
+    );
   }
 }
 
