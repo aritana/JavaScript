@@ -21,21 +21,26 @@ class App extends Component {//componente ajuda a ter o estado
         date: new Date(2021, 9, 20),
         mensage: 'Olá, tudo bem.'
       }
-    ]
+    ],
+    novoComentario: {
+      name: '',
+      email: '',
+      mensage: ''
+    }
   }
-  
-  adicionarComentario = () => {
-     const newMensage = {
-      name: 'Kleber',
-      email: 'kleber@gmail.com',
-      date: new Date(),
-      mensage: 'Sou o Kleber. Bom dia.'
-     }
-    //  let list = this.state.comentarios;
-    //  list.push(newMensage);
-    //  this.setState({comentarios: list});
+
+  adicionarComentario = evento => {
+    evento.preventDefault();
+    const novoComentario = {...this.state.novoComentario, date: new Date()};
     this.setState({
-      comentarios:[...this.state.comentarios, newMensage]
+      comentarios: [...this.state.comentarios,  novoComentario],
+      novoComentario: { name: '',email: '', mensage: '' }
+    })
+  }
+  digitacao = evento => {
+    const { name, value } = evento.target;
+    this.setState({
+      novoComentario: { ...this.state.novoComentario, [name]: value }
     })
   }
 
@@ -57,7 +62,34 @@ class App extends Component {//componente ajuda a ter o estado
           </Comentario>
 
         ))}
-        <button onClick={this.adicionarComentario}>Adicionar um comentário</button>
+        <form method="post" onSubmit={this.adicionarComentario}>
+          <h2>Adicionar Comentário</h2>
+          <div>
+            <input
+              type="text"
+              name="name"
+              value={this.state.novoComentario.name}
+              onChange={this.digitacao}
+              placeholder="Digite seu name" />
+          </div>
+          <div>
+            <input
+              type="email"
+              name="email"
+              value={this.state.novoComentario.email}
+              onChange={this.digitacao}
+              placeholder="Digite seu email" />
+          </div>
+          <div>
+            <textarea
+              name="mensage"
+              value={this.state.novoComentario.mensage}
+              onChange={this.digitacao}
+              rows="4"></textarea>
+          </div>
+          <button type="submit">Adicionar Comentário</button>
+        </form>
+
       </div>
     );
   }
