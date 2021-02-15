@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import Comentario from './components/Comentario'
+import './App.css';
 
 //tudo vai ser colocado entre <div className="App"> 
 //o componente é uma tag
@@ -12,13 +13,13 @@ class App extends Component {//componente ajuda a ter o estado
 
         name: 'Jonh',
         email: 'joao@gmail.com',
-        date: new Date(2020, 3, 19),
+        date: new Date(2021, 3, 19,14,10,1),
         mensage: 'Olá, tudo bem?'
       },
       {
         name: 'Mary',
         email: 'maria@gmail.com',
-        date: new Date(2021, 9, 20),
+        date: new Date(2021, 9, 20,22,12,1),
         mensage: 'Olá, tudo bem.'
       }
     ],
@@ -69,7 +70,7 @@ class App extends Component {//componente ajuda a ter o estado
           </Comentario>
 
         ))}
-        <form method="post" onSubmit={this.adicionarComentario}>
+        <form method="post" onSubmit={this.adicionarComentario} className="NovoComentario">
           <h2>Adicionar Comentário</h2>
           <div>
             <input
@@ -77,6 +78,7 @@ class App extends Component {//componente ajuda a ter o estado
               name="name"
               value={this.state.novoComentario.name}
               onChange={this.digitacao}
+              required
               placeholder="Digite seu name" />
           </div>
           <div>
@@ -89,6 +91,7 @@ class App extends Component {//componente ajuda a ter o estado
           </div>
           <div>
             <textarea
+             
               name="mensage"
               value={this.state.novoComentario.mensage}
               onChange={this.digitacao}
